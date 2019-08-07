@@ -45,6 +45,7 @@ type t =
   | SyntaxHighlightColorMap(ColorMap.t)
   | SyntaxHighlightTokens(TextmateClient.TokenizationResult.t)
   | OpenExplorer(string)
+  | ShowNotification(notification)
   | SetExplorerTree(UiTree.t)
   | UpdateExplorerNode(UiTree.t, UiTree.t)
   | MenuSearch(string)
@@ -79,6 +80,10 @@ type t =
   | ViewSetActiveEditor(int)
   | ToggleZenMode
   | Noop
+and notification = {
+  title: string,
+  message: string,
+}
 and editor = {
   editorId: int,
   bufferId: int,

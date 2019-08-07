@@ -10,6 +10,7 @@ let default: t = [];
 let reduce = (state: t, action: Actions.t) => {
   switch (action) {
   | ShowNotification(n) => [n, ...state]
+  | _ => state
   }
 };
 
